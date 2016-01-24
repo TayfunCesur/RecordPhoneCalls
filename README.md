@@ -102,7 +102,7 @@ After this we have good,formatted filename. And let's start recording.
 
 ## Step 4: Recording Phone Call
 
-First, you need MediaRecorder object. After created some, you must set some parameters into him. This parameters,especially <b>AudioSource!. This point is the main point of whole project. 
+First, you need MediaRecorder object. After created some, you must set some parameters into him. This parameters,especially <b>AudioSource!. This point is the main point of whole project. You have to set MediaRecorder.AudioSource.VOICE_CALL into setAudioSource() method.
 
 
 
