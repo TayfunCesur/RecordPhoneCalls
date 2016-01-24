@@ -118,4 +118,69 @@ First, you need MediaRecorder object. After created some, you must set some para
             e.printStackTrace();
         }
 
+So, your phone call recording now. if you want you can make notification . This is also completely optional. And you must stop recording after CALL_STATE_IDLE. But you must check your phone idle after phone call or normal state?.Last version of PhoneStateListener is below.
 
+    private class CallStateListener extends PhoneStateListener {
+        @Override
+        public void onCallStateChanged(int state, String incomingNumber) {
+            switch (state) {
+                case TelephonyManager.CALL_STATE_RINGING:
+                    prepareFileName(incomingNumber);
+                    break;
+                case TelephonyManager.CALL_STATE_IDLE:
+                    if (myAudioRecorder != null)
+                    {
+                        MakeNotification(false);
+                        myAudioRecorder.stop();
+                        myAudioRecorder.release();
+                    }
+                    break;
+                case TelephonyManager.CALL_STATE_OFFHOOK:
+                    MakeNotification(true);
+                    record();
+                    break;
+            }
+        }
+    }
+
+## Step 5 : Do what do you want!
+
+Now, we have phone call records in sdcard path. You are free to what do you want to do with them. You can post them to dropbox via dropbox apis or post them to your server or you can store them in your local phone which I made it.In my second tab Records List, you can see my records.These datas come from sd card folder. And here is a method to get them.
+
+    private ArrayList<String> GetFiles(String path)
+    {
+        ArrayList<String> arrayList = new ArrayList<>();
+        File file = new File(path);
+        files = file.listFiles();
+        if (files.length == 0)
+        {
+            return null;
+        }
+        else
+        {
+            for (int i = 0; i < files.length;i++ )
+            {
+                arrayList.add(files[i].getName());
+            }
+        }
+        return arrayList;
+    }
+
+## Step 6 : Player for records
+
+Here is the last step.I created player activity to listen my records.There is only one important point and it is how to set your sound file to MediaPlayer.create() method. Example usage is below,
+
+    mediaPlayer = MediaPlayer.create(this, Uri.fromFile(**File**); You must set the file which you got the GetFiles method.
+    /*Start button click*/
+    mediaPlayer.start();
+    /*Pause button click*/
+    mediaPlayer.pause();
+    
+    /*You must stop and free your mediaPlayer object when activity is destroying*/
+    
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mediaPlayer.reset();
+        mediaPlayer.stop();
+    }
