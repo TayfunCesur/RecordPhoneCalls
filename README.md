@@ -186,7 +186,7 @@ Here is the last step.I created player activity to listen my records.There is on
     }
 
 ## Download Sample Apk
-[from Dropbox](https://www.dropbox.com/s/zg77w8vghvi6yym/CallRecords.apk?dl=0)
+[from Dropbox]()
 
 ## Useful Links
 - [Shared Preferences](http://www.tutorialspoint.com/android/android_shared_preferences.htm)
