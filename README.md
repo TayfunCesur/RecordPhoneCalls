@@ -193,5 +193,9 @@ Here is the last step.I created player activity to listen my records.There is on
 - [Audio Recording](http://www.tutorialspoint.com/android/android_audio_capture.htm)
 - [Sliding Tabs](http://www.androidbegin.com/tutorial/android-viewpagertabstrip-fragments-tutorial/)
 - [ListView Example](http://www.androidbegin.com/tutorial/android-parse-com-listview-images-and-texts-tutorial/)
+- [Other Project](https://github.com/esnyder)
+
+### Questions?
+> Let me know if you have questions. Thanks
 
 
