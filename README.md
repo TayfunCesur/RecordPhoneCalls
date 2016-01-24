@@ -78,5 +78,31 @@ In my application, after service started , service call some class CallHelper wh
         }
     }
 
+## Step 3: Prepare yourself to recording!
+
+The record will start after CALL_STATE_OFFHOOK but you must prepare something like FileName. It's completely optional. I wanted to save file with good name.So I created a method which works get incoming/outgoing phone number and finds name of this number at phone contacts and get CurrentDatetime and combine this two staffs.
+
+    private void prepareFileName(String incoming)
+    {
+        if (incoming.length() >= 11)/*Check the number is special or not (like 911)*/
+        {
+            getContactList(incoming);
+        }
+        else
+        {
+            NameofNum = incoming;
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss-SS");
+        String date = sdf.format(new Date());
+        FileName ="/"+ NameofNum + "|" + date + ".3gpp";
+    }
+
+getContactList(String number) method is pretty long method. So I didn't write here. You can find it easily here  [CallHelper.java](https://github.com/TayfunCesur/RecordPhoneCalls/blob/master/src/com/xionces/StoreCallRecords/CallHelper.java)
+After this we have good,formatted filename. And let's start recording.
+
+## Step 4: Recording Phone Call
+
+First, you need MediaRecorder object. After created some, you must set some parameters into him. This parameters,especially <b>AudioSource!. This point is the main point of whole project. 
+
 
 
