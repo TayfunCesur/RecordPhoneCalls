@@ -1,3 +1,7 @@
 # RecordPhoneCalls
 
-It's a test application to learn more something about Android programming.
+###Screenshots
+
+<p align="center">
+<img src="http://i.hizliresim.com/7MWgJm.png"/>
+</p>
