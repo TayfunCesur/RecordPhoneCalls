@@ -189,9 +189,9 @@ Here is the last step.I created player activity to listen my records.There is on
 [from Dropbox](https://www.dropbox.com/s/zg77w8vghvi6yym/CallRecords.apk?dl=0)
 
 ## Useful Links
--[Shared Preferences](http://www.tutorialspoint.com/android/android_shared_preferences.htm)
--[Audio Recording](http://www.tutorialspoint.com/android/android_audio_capture.htm)
--[Sliding Tabs](http://www.androidbegin.com/tutorial/android-viewpagertabstrip-fragments-tutorial/)
--[ListView Example](http://www.androidbegin.com/tutorial/android-parse-com-listview-images-and-texts-tutorial/)
+- [Shared Preferences](http://www.tutorialspoint.com/android/android_shared_preferences.htm)
+- [Audio Recording](http://www.tutorialspoint.com/android/android_audio_capture.htm)
+- [Sliding Tabs](http://www.androidbegin.com/tutorial/android-viewpagertabstrip-fragments-tutorial/)
+- [ListView Example](http://www.androidbegin.com/tutorial/android-parse-com-listview-images-and-texts-tutorial/)
 
 
