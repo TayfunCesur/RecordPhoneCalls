@@ -38,8 +38,10 @@ I used shared preferences to save user's choice. This choices may be Listen / No
             imgbtn.setImageResource(R.drawable.microphone);
         }
     }
-User clicks listen/not listen button (First Screenshot), and via this choice CallListener service will work or stop.
+User clicks listen/not listen button (First Screenshot), and via this choice CallListener service will work or stop. Don't forget! You must save this choice with shared preferences to show to user next time.
 
+        Intent intent = new Intent(getActivity(), CallDetectService.class);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
         if (!durum.equals("Listening..."))
         {
           editor.putString(State, "Listening...");
