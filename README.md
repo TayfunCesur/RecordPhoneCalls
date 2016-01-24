@@ -47,7 +47,7 @@ User clicks listen/not listen button (First Screenshot), and via this choice Cal
           editor.putString(State, "Listening...");
           state.setText("Listening...");
           imgbtn.setImageResource(R.drawable.stop);
-          **getActivity().startService(intent)**;
+          ****getActivity().startService(intent)****;
         }
         else
         {
@@ -103,6 +103,19 @@ After this we have good,formatted filename. And let's start recording.
 ## Step 4: Recording Phone Call
 
 First, you need MediaRecorder object. After created some, you must set some parameters into him. This parameters,especially **_AudioSource!._** This point is the main point of whole project. You have to set **MediaRecorder.AudioSource.VOICE_CALL** into setAudioSource() method.
-
+        
+        public static String PATH = Environment.getExternalStorageDirectory().getAbsolutePath()+"/GorusmeKayitlari";
+        outputfilePath = PATH + FileName;
+        myAudioRecorder=new MediaRecorder();
+        myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.VOICE_CALL);
+        myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        myAudioRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
+        myAudioRecorder.setOutputFile(outputfilePath);
+        try {
+            myAudioRecorder.prepare();
+            myAudioRecorder.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
