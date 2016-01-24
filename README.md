@@ -8,13 +8,13 @@
 <img src="http://i.hizliresim.com/7MWgJm.png"/>
 </p>
 
-###How it works
+##How it works
 
-This app has some steps to make. I'll write this below with like I made.
+This app has some steps to make. I'll write this below like I made.
 
 ## Step 1 : Shared Preferences
 
-I used shared preferences to save user's choice. This choices may be Listen / Not Listen so Phone Listener service will work with respect to this choice/users choice.The method getState, checks users choice via shared preferences below.
+I used shared preferences to save user's choice. This choices may be Listen / Not Listen so Phone Listener service will work with respect to this choice.The method getState(), checks users choice via shared preferences below.
 
     private void getState()
     {
@@ -40,20 +40,20 @@ I used shared preferences to save user's choice. This choices may be Listen / No
     }
 User clicks listen/not listen button (First Screenshot), and via this choice CallListener service will work or stop.
 
-                    if (!durum.equals("Listening..."))
-                    {
-                        editor.putString(State, "Listening...");
-                        state.setText("Listening...");
-                        imgbtn.setImageResource(R.drawable.stop);
-                        ****getActivity().startService(intent)****;
-                    }
-                    else
-                    {
-                        editor.putString(State, "Not Listening...");
-                        state.setText("Not Listening...");
-                        imgbtn.setImageResource(R.drawable.microphone);
-                        ****getActivity().stopService(intent)*****;
-                    }
+        if (!durum.equals("Listening..."))
+        {
+          editor.putString(State, "Listening...");
+          state.setText("Listening...");
+          imgbtn.setImageResource(R.drawable.stop);
+          ****getActivity().startService(intent)****;
+        }
+        else
+        {
+         editor.putString(State, "Not Listening...");
+         state.setText("Not Listening...");
+         imgbtn.setImageResource(R.drawable.microphone);
+         ****getActivity().stopService(intent)*****;
+        }
 
 ## Step 2 : Creating Call Detect Service
 
