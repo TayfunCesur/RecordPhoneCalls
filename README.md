@@ -143,7 +143,7 @@ So, your phone call recording now. if you want you can make notification . This 
         }
     }
 
-## Step 5 : Do what do you want!
+## Step 5 : Do what you want!
 
 Now, we have phone call records in sdcard path. You are free to what do you want to do with them. You can post them to dropbox via dropbox apis or post them to your server or you can store them in your local phone like I did.In my second tab Records List, you can see my records.These datas come from sd card folder. And here is a method to get them.
 
