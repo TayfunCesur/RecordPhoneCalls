@@ -24,7 +24,9 @@ public class ListViewAdapter extends BaseAdapter {
     public ListViewAdapter(Context context,ArrayList<String> dataSource) {
         this.context = context;
         inflater = LayoutInflater.from(context);
-        this.ds = dataSource;
+        if (dataSource == null) this.ds = new ArrayList<>();
+        else this.ds = dataSource;
+
     }
 
     public class ViewHolder {
