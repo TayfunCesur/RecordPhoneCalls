@@ -152,17 +152,25 @@ Now, we have phone call records in sdcard path. You are free to what do you want
         ArrayList<String> arrayList = new ArrayList<>();
         File file = new File(path);
         files = file.listFiles();
-        if (files.length == 0)
+        if(files != null)
         {
-            return null;
+            if (files.length == 0)
+            {
+                return null;
+            }
+            else
+            {
+                for (int i = 0; i < files.length;i++ )
+                {
+                    arrayList.add(files[i].getName());
+                }
+            }
         }
         else
         {
-            for (int i = 0; i < files.length;i++ )
-            {
-                arrayList.add(files[i].getName());
-            }
+            return null;
         }
+        
         return arrayList;
     }
 
